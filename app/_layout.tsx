@@ -5,14 +5,14 @@ const RootLayout = () => {
   return (
     <Stack>
       <Stack.Screen
-        name="tabs"
+        name="(tabs)"
         options={{
           headerShown: false,
         }}
       />
 
       <Stack.Screen
-        name="movies/[id]"
+        name="movie/[id]"
         options={{
           headerShown: false,
         }}
