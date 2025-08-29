@@ -53,6 +53,9 @@ export default function TabsLayout() {
         options={{
           title: "Home",
           headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <TabIcon focused={focused} icon={icons.home} title="Home" />
+          ),
         }}
       />
       <Tabs.Screen
@@ -67,7 +70,7 @@ export default function TabsLayout() {
       />
 
       <Tabs.Screen
-        name="save"
+        name="saved"
         options={{
           title: "Save",
           headerShown: false,
