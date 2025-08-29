@@ -16,7 +16,10 @@ import { images } from "@/constants/images";
 
 import SearchBar from "@/components/SearchBar";
 import MovieCard from "@/components/MovieCard";
-import useFetch from "@/hooks/useFetch";
+import useFetch from "@/services/useFetch";
+import { getTrendingMovies } from "@/services/appwrite";
+import TrendingCard from "@/components/TredingCard";
+
 
 
 const Index = () => {
@@ -42,7 +45,7 @@ const Index = () => {
         resizeMode="cover"
       />
 
-      <ScrollView
+       <ScrollView
         className="flex-1 px-5"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 10 }}
@@ -82,7 +85,7 @@ const Index = () => {
                   renderItem={({ item, index }) => (
                     <TrendingCard movie={item} index={index} />
                   )}
-                  keyExtractor={(item) => item.movie_id.toString()}
+                  keyExtractor={(item) => item.movie_id.toString()+item.title}
                   ItemSeparatorComponent={() => <View className="w-4" />}
                 />
               </View>
@@ -110,7 +113,7 @@ const Index = () => {
             </>
           </View>
         )}
-      </ScrollView>
+      </ScrollView> 
     </View>
   );
 };
